@@ -1,37 +1,26 @@
 <!-- Describe task in general -->
-
-<p>
-    Joana encontrou uma caderneta antiga na sala de troféus do clube de futebol pelo qual torce, contendo resultados de todos os campeonatos que o time participou. Cada anotação na caderneta informa cinco dados de um campeonato: número de jogos, pontos, vitórias, empates e derrotas. Alguns números estão ilegíveis (-1), mas podem ser computados usando os números legíveis. Ajude Joana a completar as informações da caderneta.
+<p style="text-align: justify;">
+    Joana found an old booklet in the trophy room of the football club she supports, containing the results of all the championships the team has participated in. Each entry in the booklet gives five details of a championship: number of Games, Points, Wins (3 point/win), Draws (1 point/draw) and Losses. Some (one or two) of the numbers are illegible (-1), but they can be calculated using the legible numbers. Help Joana complete the information in the booklet.
 </p>
 
-
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}champs-table.svg" alt="example" style="max-height: 200px"/>
+</p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Entrada </strong> Uma lista contendo cinco inteiros J, P, V, E e D, representando, respectivamente, o número de jogos, o número de pontos, o número de vitórias, o número de empates e o número de derrotas em um campeonato. Um ou dois desses números podem ser -1, indicando que são ilegíveis.
+    <strong>Input:</strong> Five integers <span translate="no">({% if is_js %}number{% else %}int{% endif %}) G, P, W, D, L</span>.
 </p>
 
 <p>
-    <strong>Saída: </strong> Uma lista com cinco inteiros, os valores corrigidos da caderneta para o campeonato, na ordem: número de jogos, pontos, vitórias, empates e derrotas. As equações J = V+E+D e P = 3V+E devem ser satisfeitas.
+    <strong>Output:</strong> Five integers.
 </p>
-
 
 <!-- Put some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">countConsecutiveSummers(42) == 4
-countConsecutiveSummers(99) == 6
-</pre>
-{% else %}
-<pre class="brush: python">
-    completar_caderneta([10, 20, 6, 2, -1]) >> [10, 20, 6, 2, 2]
-completar_caderneta([-1, 64, 18, 10, 10]) >> [38, 64, 18, 10, 10]
-completar_caderneta([-1, 47, 14, -1, 9]) >> [28, 47, 14, 5, 9]
-
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
